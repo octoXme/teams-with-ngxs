@@ -1,0 +1,18 @@
+{
+  "id": "3fa80f87f-3a60-47c9-8615-ded34df355ee",
+  "name": "Zachary Beeby",
+  "email": "zachary.Bbeeby@example.com.au",
+  "avatar": "",
+  "jobTitle": "Developer",
+  "skills": {
+    "backend": 2,
+    "frontend": 3,
+    "architecture": 2,
+    "infrastructure": 2,
+    "design": 3,
+    "research": 4,
+    "qualityAssurance": 2,
+    "leaderShip": 2,
+    "mentorship": 2
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "34d09a78-7dac-4075-9810-d154e04fa332",
+  "name": "Natasha Collicott",
+  "email": "natasha.collicott@example.com.au",
+  "avatar": "",
+  "jobTitle": "Developer",
+  "skills": {
+    "backend": 3,
+    "frontend": 5,
+    "architecture": 4,
+    "infrastructure": 4,
+    "design": 4,
+    "research": 3,
+    "qualityAssurance": 4,
+    "leaderShip": 3,
+    "mentorship": 4
+  }
+}

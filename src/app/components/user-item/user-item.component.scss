@@ -1,0 +1,23 @@
+@import "variables";
+
+.user-item {
+  display: flex;
+  align-items: center;
+
+  gap: $gutter-size;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+
+    gap: calc($gutter-size / 2);
+  }
+
+  &-text {
+    display: flex;
+    align-items: center;
+    min-height: $gutter-size * 1.5;
+    width: 100%;
+  }
+}

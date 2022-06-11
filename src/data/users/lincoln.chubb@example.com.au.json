@@ -1,0 +1,18 @@
+{
+  "id": "dde93dec-1b6c-4c69-a2bb-41fd9e2a8562",
+  "name": "Lincoln Chubb",
+  "email": "lincoln.chubb@example.com.au",
+  "avatar": "",
+  "jobTitle": "Senior Developer",
+  "skills": {
+    "backend": 5,
+    "frontend": 3,
+    "architecture": 5,
+    "infrastructure": 4,
+    "design": 1,
+    "research": 5,
+    "qualityAssurance": 5,
+    "leaderShip": 5,
+    "mentorship": 5
+  }
+}

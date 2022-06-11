@@ -1,0 +1,28 @@
+@import "variables";
+
+$ICON_SIZE: 20px;
+
+:host {
+  flex: 1 1 auto;
+}
+.add-user {
+  display: flex;
+  align-items: center;
+
+  &-field {
+    flex: 1 1 auto;
+  }
+
+  &-action {
+    color: $brand-primary;
+    &-icon {
+      height: $ICON_SIZE;
+      width: $ICON_SIZE;
+      font-size: $ICON_SIZE;
+    }
+  }
+}
+
+::ng-deep .mat-form-field-wrapper {
+  padding: 0;
+}
