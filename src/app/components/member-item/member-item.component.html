@@ -1,0 +1,16 @@
+<div class="member-item">
+  <div class="member-item-content">
+    <app-member-avatar
+      [loading]="loading"
+      [size]="size"
+      [name]="member.name"
+      [photo]="member.avatar"
+    ></app-member-avatar>
+    <div class="member-item-text" [class.skeleton-box]="loading">
+      {{ member.name }}
+    </div>
+  </div>
+  <div class="member-item-actions">
+    <ng-content select="[actions]"></ng-content>
+  </div>
+</div>

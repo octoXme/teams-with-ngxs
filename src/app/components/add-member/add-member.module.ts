@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { AddUserComponent } from './add-user.component';
-import { MatIconModule } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { UserItemModule } from '../user-item/user-item.module';
+import { MemberItemModule } from '../member-item/member-item.module';
+import { AddMemberComponent } from './add-member.component';
 
 @NgModule({
-  declarations: [AddUserComponent],
+  declarations: [AddMemberComponent],
   imports: [
     ReactiveFormsModule,
     CommonModule,
@@ -22,8 +22,8 @@ import { UserItemModule } from '../user-item/user-item.module';
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
-    UserItemModule,
+    MemberItemModule,
   ],
-  exports: [AddUserComponent],
+  exports: [AddMemberComponent],
 })
 export class AddUserModule {}

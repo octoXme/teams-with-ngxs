@@ -2,21 +2,21 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { map, Observable, startWith } from 'rxjs';
-import { IUser } from 'src/app/models/user.model';
+import { IMember } from 'src/app/models/member.model';
 
 @Component({
-  selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.scss'],
+  selector: 'app-add-member',
+  templateUrl: './add-member.component.html',
+  styleUrls: ['./add-member.component.scss'],
 })
-export class AddUserComponent implements OnInit {
+export class AddMemberComponent implements OnInit {
   @Input() placeholder: string = '';
-  @Input() options: IUser[] = [];
+  @Input() options: IMember[] = [];
   @Input() position: string = '';
-  @Output() addUser = new EventEmitter<{ email: string; position: string }>();
+  @Output() addMember = new EventEmitter<{ email: string; position: string }>();
 
   inputControl = new FormControl();
-  filteredOptions: Observable<IUser[] | null> | undefined;
+  filteredOptions: Observable<IMember[] | null> | undefined;
   selectedUser: string | undefined;
 
   ngOnInit(): void {
@@ -26,14 +26,14 @@ export class AddUserComponent implements OnInit {
     );
   }
 
-  private filterOptions(value: string): IUser[] | null {
+  private filterOptions(value: string): IMember[] | null {
     if (!value) return this.options;
     const filterValue = value.toLowerCase().trim();
 
     if (!this.options) return null;
 
-    return this.options.filter((user) =>
-      user.name.toLowerCase().includes(filterValue)
+    return this.options.filter((member) =>
+      member.name.toLowerCase().includes(filterValue)
     );
   }
 
@@ -42,6 +42,6 @@ export class AddUserComponent implements OnInit {
   }
 
   onAddUser(): void {
-    // this.addUser.emit({ email: this.selectedUser, position: this.position });
+    // this.addMember.emit({ email: this.selectedUser, position: this.position });
   }
 }

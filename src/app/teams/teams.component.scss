@@ -1,0 +1,21 @@
+@import "variables";
+
+.team {
+  padding-bottom: $gutter-size * 5;
+}
+:host::ng-deep {
+  .mat-tab-body,
+  .mat-tab-body.mat-tab-body-active {
+    overflow: hidden;
+  }
+  .mat-tab-body-content {
+    height: inherit;
+  }
+  .mat-tab-header {
+    height: 0 !important;
+    max-height: 0 !important;
+    border: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}

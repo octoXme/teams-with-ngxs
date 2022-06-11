@@ -1,5 +1,5 @@
-<form class="add-user">
-  <mat-form-field class="add-user-field" appearance="outline">
+<form class="add-member">
+  <mat-form-field class="add-member-field" appearance="outline">
     <mat-label>{{ placeholder }}</mat-label>
     <input
       type="text"
@@ -16,19 +16,19 @@
         *ngFor="let option of filteredOptions | async"
         [value]="option.mail"
       >
-        <app-user-item [user]="option"></app-user-item>
+        <app-member-item [member]="option"></app-member-item>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <div class="add-user-action">
+  <div class="add-member-action">
     <button
       mat-icon-button
       (click)="onAddUser()"
       [disabled]="!this.selectedUser"
     >
       <mat-icon
-        [svgIcon]="'feather:user-plus'"
-        class="add-user-action-icon"
+        [svgIcon]="'feather:member-plus'"
+        class="add-member-action-icon"
       ></mat-icon>
     </button>
   </div>

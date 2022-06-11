@@ -1,1 +1,27 @@
-<p>teams works!</p>
+<ng-container *ngIf="loading$ | async; else loaded">
+  <app-page-loader></app-page-loader>
+</ng-container>
+<ng-template #loaded>
+  <mat-progress-bar color="accent" [value]="sprintPosition"></mat-progress-bar>
+
+  <ng-container *ngIf="sprints$ | async as sprints">
+    <mat-tab-group [selectedIndex]="index" class="team">
+      <ng-container
+        *ngFor="let sprint of sprints | keyvalue; trackBy: trackByFn"
+      >
+        <mat-tab [label]="sprint.key | displayDateRange">
+          <ng-template matTabContent>
+            <!-- <app-sprint-projects></app-sprint-projects> -->
+          </ng-template>
+        </mat-tab>
+      </ng-container>
+    </mat-tab-group>
+    <app-page-navigation
+      [title]="currentSprintDate | displayDateRange"
+      [disablePrev]="isFirst"
+      [disableNext]="isLast"
+      (next)="nextSprint()"
+      (prev)="prevSprint()"
+    ></app-page-navigation>
+  </ng-container>
+</ng-template>

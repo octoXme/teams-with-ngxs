@@ -1,6 +1,6 @@
-import { DateTime, Interval } from 'luxon';
+import { DateTime } from 'luxon';
 
-export const SPRINT_DATE_FORMAT = 'd.L.yyyy';
+export const SPRINT_DATE_FORMAT = 'd/L/yyyy';
 const FULL_DATE_FORMAT = 'yyyyLLdd';
 
 function convertDateStringToDateNumber(
