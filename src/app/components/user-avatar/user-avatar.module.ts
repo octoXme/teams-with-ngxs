@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { DisplayNameInitials } from 'src/app/pipes/display-name-initials.pipe';
-import { MemberAvatarComponent } from './member-avatar.component';
+import { UserAvatarComponent } from './user-avatar.component';
 
 @NgModule({
-  declarations: [DisplayNameInitials, MemberAvatarComponent],
+  declarations: [DisplayNameInitials, UserAvatarComponent],
   imports: [CommonModule],
-  exports: [MemberAvatarComponent],
+  exports: [UserAvatarComponent],
 })
-export class MemberAvatarModule {}
+export class UserAvatarModule {}

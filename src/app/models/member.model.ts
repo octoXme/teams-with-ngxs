@@ -1,10 +1,10 @@
 export interface IMember {
-  id: string;
-  name: string;
+  id: string | undefined;
+  name: string | undefined;
   email: string;
   avatar: string | undefined;
-  jobTitle: string;
-  skills: ISkillRating;
+  position: string | undefined;
+  skills: ISkillRating | undefined;
 }
 
 export enum Position {

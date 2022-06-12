@@ -4,7 +4,11 @@ $ICON_SIZE: 20px;
 
 :host {
   flex: 1 1 auto;
+  &::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+  }
 }
+
 .add-member {
   display: flex;
   align-items: center;
@@ -21,8 +25,4 @@ $ICON_SIZE: 20px;
       font-size: $ICON_SIZE;
     }
   }
-}
-
-::ng-deep .mat-form-field-wrapper {
-  padding: 0;
 }

@@ -1,0 +1,8 @@
+<mat-card>
+  <mat-card-content class="sprint-team-members-content">
+    <div *ngFor="let member of members">
+      <app-team-member [email]="member"></app-team-member>
+    </div>
+  </mat-card-content>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>

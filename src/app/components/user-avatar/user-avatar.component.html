@@ -1,6 +1,6 @@
-<div class="member-avatar">
+<div class="user-avatar">
   <div
-    class="member-avatar-image"
+    class="user-avatar-image"
     [class.skeleton-box]="loading"
     [style.width.px]="size"
     [style.height.px]="size"
@@ -9,6 +9,6 @@
   </div>
 
   <ng-template #letterTmpl>
-    <span class="member-avatar-text">{{ name | displayNameInitials }}</span>
+    <span class="user-avatar-text">{{ name | displayNameInitials }}</span>
   </ng-template>
 </div>

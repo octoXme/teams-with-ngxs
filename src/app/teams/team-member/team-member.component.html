@@ -1,0 +1,18 @@
+<app-user-item
+  [name]="member?.name"
+  [loading]="loading"
+  [photo]="member?.avatar"
+>
+  <div *ngIf="!loading && !disabled" actions>
+    <button
+      mat-icon-button
+      class="member-item-action"
+      (click)="onRemoveUser(member?.email)"
+    >
+      <mat-icon
+        [svgIcon]="'feather:x'"
+        class="member-item-action-icon"
+      ></mat-icon>
+    </button>
+  </div>
+</app-user-item>

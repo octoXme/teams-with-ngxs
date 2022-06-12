@@ -1,0 +1,16 @@
+<div class="user-item">
+  <div class="user-item-content">
+    <app-user-avatar
+      [loading]="loading"
+      [size]="size"
+      [name]="name"
+      [photo]="photo"
+    ></app-user-avatar>
+    <div class="user-item-text" [class.skeleton-box]="loading">
+      {{ name }}
+    </div>
+  </div>
+  <div class="user-item-actions">
+    <ng-content select="[actions]"></ng-content>
+  </div>
+</div>

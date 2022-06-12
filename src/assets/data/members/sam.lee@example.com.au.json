@@ -3,7 +3,7 @@
   "name": "Sam Lee",
   "email": "sam.lee@example.com.au",
   "avatar": "",
-  "jobTitle": "Developer",
+  "position": "Developer",
   "skills": {
     "backend": 4,
     "frontend": 3,

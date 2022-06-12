@@ -3,7 +3,7 @@
   "name": "Adam Long",
   "email": "adam.long@example.com.au",
   "avatar": "https://images.generated.photos/PpKZYA1K3UpbSVhxiEkeIhaepC-i8YFN6WBDW5DSp78/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjEwODYxLmpwZw.jpg",
-  "jobTitle": "Senior Developer",
+  "position": "Senior Developer",
   "skills": {
     "backend": 5,
     "frontend": 4.5,

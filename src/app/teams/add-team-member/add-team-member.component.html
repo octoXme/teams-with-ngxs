@@ -14,17 +14,17 @@
     >
       <mat-option
         *ngFor="let option of filteredOptions | async"
-        [value]="option.mail"
+        [value]="option.email"
       >
-        <app-member-item [member]="option"></app-member-item>
+        <app-user-item [name]="option.name"></app-user-item>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
   <div class="add-member-action">
     <button
       mat-icon-button
-      (click)="onAddUser()"
-      [disabled]="!this.selectedUser"
+      (click)="onAddMember()"
+      [disabled]="!this.selectedMember"
     >
       <mat-icon
         [svgIcon]="'feather:member-plus'"

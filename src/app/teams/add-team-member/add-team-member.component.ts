@@ -5,19 +5,18 @@ import { map, Observable, startWith } from 'rxjs';
 import { IMember } from 'src/app/models/member.model';
 
 @Component({
-  selector: 'app-add-member',
-  templateUrl: './add-member.component.html',
-  styleUrls: ['./add-member.component.scss'],
+  selector: 'app-add-team-member',
+  templateUrl: './add-team-member.component.html',
+  styleUrls: ['./add-team-member.component.scss'],
 })
-export class AddMemberComponent implements OnInit {
-  @Input() placeholder: string = '';
+export class AddTeamMemberComponent implements OnInit {
+  @Input() placeholder: string;
   @Input() options: IMember[] = [];
-  @Input() position: string = '';
-  @Output() addMember = new EventEmitter<{ email: string; position: string }>();
+  @Output() addMember = new EventEmitter<{ email: string }>();
 
   inputControl = new FormControl();
   filteredOptions: Observable<IMember[] | null> | undefined;
-  selectedUser: string | undefined;
+  selectedMember: string;
 
   ngOnInit(): void {
     this.filteredOptions = this.inputControl.valueChanges.pipe(
@@ -33,15 +32,15 @@ export class AddMemberComponent implements OnInit {
     if (!this.options) return null;
 
     return this.options.filter((member) =>
-      member.name.toLowerCase().includes(filterValue)
+      member?.name?.toLowerCase().includes(filterValue)
     );
   }
 
   onSelect(element: MatAutocompleteSelectedEvent): void {
-    this.selectedUser = element.option.value;
+    this.selectedMember = element.option.value;
   }
 
-  onAddUser(): void {
-    // this.addMember.emit({ email: this.selectedUser, position: this.position });
+  onAddMember(): void {
+    this.addMember.emit({ email: this.selectedMember });
   }
 }

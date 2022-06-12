@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
   Action,
+  createSelector,
   Selector,
   State,
   StateContext,
@@ -13,6 +14,14 @@ import { ILoadable, LoadableStatus } from 'src/app/models/meta';
 import { MemberService } from 'src/app/services/member.services';
 import { Member } from './members.actions';
 
+const defaultMemberValue: IMember = {
+  id: undefined,
+  name: undefined,
+  email: '',
+  position: undefined,
+  skills: undefined,
+  avatar: undefined,
+};
 export interface ILoadableMember {
   [email: string]: ILoadable<IMember>;
 }
@@ -36,6 +45,13 @@ export class MemberState {
     return Object.values(state.entities);
   }
 
+  @Selector()
+  static selectMemberByEmail(email: string) {
+    return createSelector([MemberState], (state): ILoadable<IMember> => {
+      return state.memberState.entities?.[email];
+    });
+  }
+
   @Action(Member.getMemberByEmail)
   getDataFromState(
     ctx: StateContext<MemberStateModel>,
@@ -45,17 +61,25 @@ export class MemberState {
 
     // check if user has been loaded
     const userStatus = state.entities[action.email]?.status;
+
     if (
-      userStatus === LoadableStatus.Loaded ||
-      userStatus === LoadableStatus.Loading
+      !action.email &&
+      (userStatus === LoadableStatus.Loaded ||
+        userStatus === LoadableStatus.Loading)
     ) {
       return state;
     }
 
     ctx.setState(
-      updateEntity({ status: LoadableStatus.Loading, message: '', value: null })
+      updateEntity({
+        status: LoadableStatus.Loading,
+        message: '',
+        value: {
+          ...defaultMemberValue,
+          email: action.email,
+        },
+      })
     );
-
     return this.memberService.getUserByEmail(action.email).pipe(
       tap((member) => {
         ctx.setState(

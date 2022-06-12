@@ -72,9 +72,7 @@ export class TeamState {
 
     return this.teamService.getTeams().pipe(
       tap((teams) => {
-        console.log('teams: ', teams);
         const sprintTeams = SPRINTS.reduce((acc, current) => {
-          console.log('aaaaaaaaaaaaaa', current);
           return {
             ...acc,
             [current]: teams,

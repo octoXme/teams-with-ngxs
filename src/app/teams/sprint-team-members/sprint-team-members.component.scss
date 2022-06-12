@@ -1,0 +1,10 @@
+@import "variables";
+
+.sprint-team-members {
+  &-content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    gap: 1rem;
+  }
+}
