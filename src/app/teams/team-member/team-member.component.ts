@@ -38,6 +38,8 @@ export class TeamMemberComponent implements OnInit, OnDestroy {
   memberSkills: ISkillRating[] = [];
   memberSubscription: Subscription = new Subscription();
 
+  isOpen: boolean;
+
   constructor(private store: Store) {}
 
   ngOnInit(): void {
@@ -63,6 +65,14 @@ export class TeamMemberComponent implements OnInit, OnDestroy {
   onRemoveMember(event: Event): void {
     event.stopPropagation();
     this.removeMember.emit(this.email);
+  }
+
+  onClosed(): void {
+    this.isOpen = false;
+  }
+
+  onOpened(): void {
+    this.isOpen = true;
   }
 
   ngOnDestroy(): void {

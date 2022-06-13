@@ -10,4 +10,5 @@ export class UserAvatarComponent {
   @Input() name: string | null | undefined;
   @Input() size: number | undefined;
   @Input() loading: boolean | undefined;
+  @Input() selected: boolean = false;
 }
