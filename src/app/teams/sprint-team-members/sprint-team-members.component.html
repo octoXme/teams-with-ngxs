@@ -1,6 +1,8 @@
 <mat-card class="sprint-team-members-card">
   <mat-card-header class="sprint-team-members-card-header">
-    <mat-card-subtitle>{{ team.name }}</mat-card-subtitle>
+    <mat-card-subtitle class="section-header">{{
+      team.name
+    }}</mat-card-subtitle>
     <div *ngIf="!!team.members?.length" class="sprint-team-members-card-count">
       {{ team.members?.length }}
     </div>
