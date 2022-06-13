@@ -1,20 +1,25 @@
 <mat-card class="sprint-team-members-card">
-  <mat-card-subtitle>{{ team.name }}</mat-card-subtitle>
-  <mat-card-content class="sprint-team-members-content">
-    <ng-container *ngIf="team.members.length === 0">
-      <div class="sprint-team-members-empty">
-        <mat-icon [svgIcon]="'feather:frown'"></mat-icon>
-        NO ONE HERE!
-      </div>
-    </ng-container>
+  <mat-card-header class="sprint-team-members-card-header">
+    <mat-card-subtitle>{{ team.name }}</mat-card-subtitle>
+    <div *ngIf="!!team.members?.length" class="sprint-team-members-card-count">
+      {{ team.members?.length }}
+    </div>
+  </mat-card-header>
+  <div
+    *ngIf="team.members.length === 0"
+    class="sprint-team-members-card-content sprint-team-members-card-content-empty"
+  >
+    <mat-icon [svgIcon]="'feather:frown'"></mat-icon>
+    NO ONE HERE!
+  </div>
+  <div *ngIf="!isUnallocatedTeam" class="sprint-team-members-card-content">
     <app-add-team-member
-      *ngIf="!isUnallocatedTeam"
       placeholder="Add member to the team"
       [options]="availableOptions"
       (addMember)="addMemberToSprintTeam($event)"
       (updateOptions)="updateOptions()"
     ></app-add-team-member>
-  </mat-card-content>
+  </div>
 </mat-card>
 <mat-accordion>
   <app-team-member

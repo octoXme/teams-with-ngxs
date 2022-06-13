@@ -1,23 +1,46 @@
 @import "variables";
 
+$BADGE_SIZE: 1.25rem;
+
 .sprint-team-members {
   &-card {
     margin-bottom: $gutter-size;
-  }
+    &-header {
+      justify-content: space-between;
+    }
+    &-content {
+      margin-top: $gutter-size;
+      &-empty {
+        display: flex;
+        align-items: center;
+        gap: calc($gutter-size / 2);
+        color: $brand-icon;
+      }
+    }
+    &-count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  &-content {
-    margin-top: $gutter-size;
-  }
+      width: $BADGE_SIZE;
+      height: $BADGE_SIZE;
 
-  &-empty {
-    display: flex;
-    align-items: center;
-    gap: calc($gutter-size / 2);
-    color: $brand-icon;
+      background-color: $brand-accent;
+      color: $brand-accent-text;
+      border-radius: calc($BADGE_SIZE / 2);
+
+      font-size: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
   }
 }
 
 :host::ng-deep {
+  .mat-card-header-text,
+  mat-card-header-text {
+    margin: 0;
+  }
   mat-card-subtitle {
     margin: 0;
   }
