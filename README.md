@@ -1,12 +1,24 @@
+# Demo
+
+🔥[Demo link](https://octoxme.github.io/teams-with-ngxs/teams)
+
 # TeamsWithNgxs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
-This is an experiment project that uses ngxs as state management to have a ability to add/remove team members from sprint teams
-(future - add functionality to add new members)
+
+This is an experiment project that uses [ngxs](https://ngxs.io/) as state management to have a ability to add/remove team members from sprint teams<br />
+
+Future improvements
+
+<ul>
+    <li>user management - add functionality to add new members</li>
+    <li>move backend to AWS</li>
+    <li>unit tests</li>
+</ul>
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4700/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
