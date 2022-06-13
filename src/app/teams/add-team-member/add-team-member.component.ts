@@ -12,10 +12,10 @@ import { IMember } from 'src/app/models/member.model';
 export class AddTeamMemberComponent implements OnInit {
   @Input() placeholder: string;
   @Input() options: IMember[] = [];
-  @Output() addMember = new EventEmitter<{ email: string }>();
+  @Output() addMember = new EventEmitter<string>();
 
   inputControl = new FormControl();
-  filteredOptions: Observable<IMember[] | null> | undefined;
+  filteredOptions: Observable<IMember[] | null>;
   selectedMember: string;
 
   ngOnInit(): void {
@@ -41,6 +41,6 @@ export class AddTeamMemberComponent implements OnInit {
   }
 
   onAddMember(): void {
-    this.addMember.emit({ email: this.selectedMember });
+    this.addMember.emit(this.selectedMember);
   }
 }

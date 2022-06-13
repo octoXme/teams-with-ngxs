@@ -1,4 +1,11 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Subscription } from 'rxjs';
 import { IMember } from 'src/app/models/member.model';
@@ -14,10 +21,10 @@ import { MemberState } from 'src/app/store/members/members.state';
 export class TeamMemberComponent implements OnInit, OnDestroy {
   @Input() email: string;
   @Input() disabled: boolean;
+  @Output() removeMember = new EventEmitter<string>();
 
   member: IMember | null;
   loading: boolean;
-
   memberSubscription: Subscription = new Subscription();
 
   constructor(private store: Store) {}
@@ -32,7 +39,9 @@ export class TeamMemberComponent implements OnInit, OnDestroy {
     this.store.dispatch(new Member.getMemberByEmail(this.email));
   }
 
-  onRemoveUser(email: string | undefined): void {}
+  onRemoveMember(email: string | undefined): void {
+    this.removeMember.emit(email);
+  }
 
   ngOnDestroy(): void {
     this.memberSubscription?.unsubscribe();

@@ -66,6 +66,17 @@ export class TeamState {
     return state.entities[currentSprintKey] ?? null;
   }
 
+  @Selector()
+  static selectCurrentSprintUnallocated(
+    state: TeamStateModel
+  ): string[] | undefined {
+    const currentSprint = this.selectCurrentSprintTeams(state);
+    const members = currentSprint.find(
+      (project) => project.name === 'Unallocated'
+    )?.members;
+    return members;
+  }
+
   @Action(Team.GetSprintTeams)
   getDataFromServer(ctx: StateContext<TeamStateModel>) {
     ctx.patchState({ status: LoadableStatus.Loading });

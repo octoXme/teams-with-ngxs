@@ -1,13 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule } from '@angular/router';
 import { NgxsModule } from '@ngxs/store';
@@ -16,9 +12,10 @@ import { PageNavigationModule } from '../components/page-navigation/page-navigat
 import { UserAvatarModule } from '../components/user-avatar/user-avatar.module';
 import { UserItemModule } from '../components/user-item/user-item.module';
 import { DisplayDateRange } from '../pipes/display-date-range.pipe';
+import { ConfirmationModule } from '../services/confirmation/confirmation.module';
 import { MemberState } from '../store/members/members.state';
 import { TeamState } from '../store/teams/teams.state';
-import { AddTeamMemberComponent } from './add-team-member/add-team-member.component';
+import { AddTeamMemberModule } from './add-team-member/add-team-member.module';
 import { SprintTeamMembersComponent } from './sprint-team-members/sprint-team-members.component';
 import { SprintTeamsComponent } from './sprint-teams/sprint-teams.component';
 import { TeamMemberComponent } from './team-member/team-member.component';
@@ -32,7 +29,6 @@ import { teamsRoutes } from './teams.routes';
     SprintTeamsComponent,
     SprintTeamMembersComponent,
     TeamMemberComponent,
-    AddTeamMemberComponent,
   ],
   imports: [
     CommonModule,
@@ -47,10 +43,8 @@ import { teamsRoutes } from './teams.routes';
     UserItemModule,
     MatIconModule,
     MatButtonModule,
-    MatAutocompleteModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    ReactiveFormsModule,
+    ConfirmationModule,
+    AddTeamMemberModule,
   ],
 })
 export class TeamsModule {}
