@@ -36,9 +36,11 @@ $ICON_SIZE: 20px;
 
 @include screen("gt-sm") {
   .team-member {
-    &-item {
-      flex-direction: row;
-      align-items: center;
+    &-rating {
+      &-item {
+        flex-direction: row;
+        align-items: center;
+      }
     }
   }
 }
