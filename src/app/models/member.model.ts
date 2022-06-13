@@ -23,7 +23,7 @@ export interface ISkillRating {
   design: number; // Wireframes, Mocks, LowFid, HighFid, Prototypes
   research: number; // problem discovery, Customer research, Requirement gathering
   qualityAssurance: number; // Auditing & Testing, Drafting & Implementing quality procedures, test automation, BDD
-  leaderShip: number; // Ability to inspire a team to achieve a goal. Influencing, Empowering, Motivating
+  leadership: number; // Ability to inspire a team to achieve a goal. Influencing, Empowering, Motivating
   mentorship: number; // Coaching, Sharing & Development of others skills
 }
 
@@ -45,7 +45,7 @@ export const SkillDescription = new Map<string, string>([
     'Auditing & Testing, Drafting & Implementing quality procedures, test automation, BDD',
   ],
   [
-    'leaderShip',
+    'leadership',
     'Ability to inspire a team to achieve a goal. Influencing, Empowering, Motivating',
   ],
   ['mentorship', 'Coaching, Sharing & Development of others skills'],
@@ -59,6 +59,6 @@ export const SkillName = new Map<string, string>([
   ['design', 'Design'],
   ['research', 'Research'],
   ['qualityAssurance', 'Quality Assurance'],
-  ['leaderShip', 'LeaderShip'],
+  ['leadership', 'Leadership'],
   ['mentorship', 'Mentorship'],
 ]);
