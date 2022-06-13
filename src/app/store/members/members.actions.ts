@@ -1,6 +1,6 @@
 export namespace Member {
   export class getMemberByEmail {
-    static readonly type = '[Member API] Fetch Member By Email Address';
+    static readonly type = '[Member API] Fetch member by email address';
     constructor(public email: string) {}
   }
 }

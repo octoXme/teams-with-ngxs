@@ -18,7 +18,7 @@ import { TeamState } from '../store/teams/teams.state';
 import { AddTeamMemberModule } from './add-team-member/add-team-member.module';
 import { SprintTeamMembersComponent } from './sprint-team-members/sprint-team-members.component';
 import { SprintTeamsComponent } from './sprint-teams/sprint-teams.component';
-import { TeamMemberComponent } from './team-member/team-member.component';
+import { TeamMemberModule } from './team-member/team-member.module';
 import { TeamsComponent } from './teams.component';
 import { teamsRoutes } from './teams.routes';
 
@@ -28,7 +28,6 @@ import { teamsRoutes } from './teams.routes';
     DisplayDateRange,
     SprintTeamsComponent,
     SprintTeamMembersComponent,
-    TeamMemberComponent,
   ],
   imports: [
     CommonModule,
@@ -38,13 +37,14 @@ import { teamsRoutes } from './teams.routes';
     PageNavigationModule,
     MatTabsModule,
     MatProgressBarModule,
-    MatCardModule,
+    MatCardModule, // remove later
     UserAvatarModule,
     UserItemModule,
     MatIconModule,
     MatButtonModule,
     ConfirmationModule,
     AddTeamMemberModule,
+    TeamMemberModule,
   ],
 })
 export class TeamsModule {}

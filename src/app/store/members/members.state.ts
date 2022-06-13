@@ -63,9 +63,8 @@ export class MemberState {
     const userStatus = state.entities[action.email]?.status;
 
     if (
-      !action.email &&
-      (userStatus === LoadableStatus.Loaded ||
-        userStatus === LoadableStatus.Loading)
+      userStatus === LoadableStatus.Loaded ||
+      userStatus === LoadableStatus.Loading
     ) {
       return state;
     }

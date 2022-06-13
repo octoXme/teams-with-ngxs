@@ -6,7 +6,6 @@ export class DisplayNameInitials implements PipeTransform {
     if (!name) return '';
 
     const names = name.split(' ');
-    console.log('names', names);
     if (!names.length) return '';
 
     return `${names?.[0].charAt(0)}${names?.[1].charAt(0)}`;

@@ -26,3 +26,39 @@ export interface ISkillRating {
   leaderShip: number; // Ability to inspire a team to achieve a goal. Influencing, Empowering, Motivating
   mentorship: number; // Coaching, Sharing & Development of others skills
 }
+
+export const SkillDescription = new Map<string, string>([
+  ['backend', 'Serverless, AWS, API, Data-structures, JS/TS, Git'],
+  ['frontend', 'Web app frameworks, Design, Styling, TDD'],
+  [
+    'architecture',
+    'Serverless, Microservice, SOLID, DRY, IoC, DI, Enterprise messaging, CQRS, Event-Sourcing',
+  ],
+  [
+    'infrastructure',
+    'VMs, Containers, Networking, Subnetting, Firewalls, Linux, Bash, Windows-server, Powershell',
+  ],
+  ['design', 'Wireframes, Mocks, LowFid, HighFid, Prototypes'],
+  ['research', 'Problem discovery, Customer research, Requirement gathering'],
+  [
+    'qualityAssurance',
+    'Auditing & Testing, Drafting & Implementing quality procedures, test automation, BDD',
+  ],
+  [
+    'leaderShip',
+    'Ability to inspire a team to achieve a goal. Influencing, Empowering, Motivating',
+  ],
+  ['mentorship', 'Coaching, Sharing & Development of others skills'],
+]);
+
+export const SkillName = new Map<string, string>([
+  ['backend', 'Backend'],
+  ['frontend', 'Frontend'],
+  ['architecture', 'Architecture'],
+  ['infrastructure', 'Infrastructure'],
+  ['design', 'Design'],
+  ['research', 'Research'],
+  ['qualityAssurance', 'Quality Assurance'],
+  ['leaderShip', 'LeaderShip'],
+  ['mentorship', 'Mentorship'],
+]);

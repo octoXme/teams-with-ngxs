@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
+import {
+  insertItem,
+  patch,
+  removeItem,
+  updateItem,
+} from '@ngxs/store/operators';
 import { catchError, of, tap } from 'rxjs';
 import { LoadableStatus } from 'src/app/models/meta';
 import { ITeam } from 'src/app/models/team.model';
@@ -61,6 +67,11 @@ export class TeamState {
   }
 
   @Selector()
+  static selectCurrentSprint(state: TeamStateModel): string {
+    return Object.keys(state.entities)[state.currentSprint] ?? '';
+  }
+
+  @Selector()
   static selectCurrentSprintTeams(state: TeamStateModel): ITeam[] {
     const currentSprintKey = Object.keys(state.entities)[state.currentSprint];
     return state.entities[currentSprintKey] ?? null;
@@ -75,6 +86,14 @@ export class TeamState {
       (project) => project.name === 'Unallocated'
     )?.members;
     return members;
+  }
+
+  @Action(Team.SetCurrentSprint)
+  setDataInState(
+    ctx: StateContext<TeamStateModel>,
+    action: { sprintKey: number }
+  ) {
+    return ctx.patchState({ currentSprint: action.sprintKey });
   }
 
   @Action(Team.GetSprintTeams)
@@ -104,6 +123,78 @@ export class TeamState {
             message: 'Error occurred while loading projects',
           })
         );
+      })
+    );
+  }
+
+  @Action(Team.RemoveMemberFromTeam)
+  removeDataFromState(
+    ctx: StateContext<TeamStateModel>,
+    action: { email: string; team: string }
+  ) {
+    const state = ctx.getState();
+    const currentSprintKey = Object.keys(state.entities)[state.currentSprint];
+
+    // move member to unallocated
+    ctx.setState(
+      patch<TeamStateModel>({
+        entities: patch({
+          [currentSprintKey]: updateItem<ITeam>(
+            (team) => team?.name === 'Unallocated',
+            patch<ITeam>({
+              members: insertItem<string>(action.email),
+            })
+          ),
+        }),
+      })
+    );
+    // remove it from the sprint team
+    return ctx.setState(
+      patch<TeamStateModel>({
+        entities: patch({
+          [currentSprintKey]: updateItem<ITeam>(
+            (team) => team?.name === action.team,
+            patch<ITeam>({
+              members: removeItem<string>((member) => member === action.email),
+            })
+          ),
+        }),
+      })
+    );
+  }
+
+  @Action(Team.AddMemberToTeam)
+  addDataToState(
+    ctx: StateContext<TeamStateModel>,
+    action: { email: string; team: string }
+  ) {
+    const state = ctx.getState();
+    const currentSprintKey = Object.keys(state.entities)[state.currentSprint];
+
+    // remove from unallocated
+    ctx.setState(
+      patch<TeamStateModel>({
+        entities: patch({
+          [currentSprintKey]: updateItem<ITeam>(
+            (project) => project?.name === 'Unallocated',
+            patch<ITeam>({
+              members: removeItem<string>((member) => member === action.email),
+            })
+          ),
+        }),
+      })
+    );
+
+    return ctx.setState(
+      patch<TeamStateModel>({
+        entities: patch({
+          [currentSprintKey]: updateItem<ITeam>(
+            (team) => team?.name === action.team,
+            patch<ITeam>({
+              members: insertItem<string>(action.email),
+            })
+          ),
+        }),
       })
     );
   }

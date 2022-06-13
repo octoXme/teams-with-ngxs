@@ -1,6 +1,7 @@
 <mat-card>
+  {{ sprint }}
   <mat-card-content class="sprint-team-members-content">
-    <div *ngFor="let member of members">
+    <div *ngFor="let member of team.members">
       <!-- pass remove -->
       <app-team-member
         [email]="member"
@@ -17,3 +18,4 @@
     </app-add-team-member>
   </mat-card-actions>
 </mat-card>
+<!-- // TODO JIN UPDATE THE LAYOUT -->

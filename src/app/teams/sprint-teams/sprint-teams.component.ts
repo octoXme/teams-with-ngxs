@@ -13,6 +13,9 @@ export class SprintTeamsComponent implements OnInit {
   @Select(TeamState.selectCurrentSprintTeams)
   teams$: Observable<ITeam[]>;
 
+  @Select(TeamState.selectCurrentSprint)
+  sprint$: Observable<string>;
+
   constructor() {}
 
   ngOnInit(): void {}

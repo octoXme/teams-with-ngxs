@@ -8,10 +8,20 @@ import {
 } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Subscription } from 'rxjs';
-import { IMember } from 'src/app/models/member.model';
+import {
+  IMember,
+  SkillDescription,
+  SkillName,
+} from 'src/app/models/member.model';
 import { LoadableStatus } from 'src/app/models/meta';
 import { Member } from 'src/app/store/members/members.actions';
 import { MemberState } from 'src/app/store/members/members.state';
+
+interface ISkillRating {
+  rating: number;
+  name: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-team-member',
@@ -25,6 +35,7 @@ export class TeamMemberComponent implements OnInit, OnDestroy {
 
   member: IMember | null;
   loading: boolean;
+  memberSkills: ISkillRating[] = [];
   memberSubscription: Subscription = new Subscription();
 
   constructor(private store: Store) {}
@@ -35,12 +46,23 @@ export class TeamMemberComponent implements OnInit, OnDestroy {
       .subscribe((data) => {
         this.loading = data?.status === LoadableStatus.Loading ?? false;
         this.member = data?.value;
+        const skills = data?.value?.skills;
+        if (skills) {
+          for (const [key, value] of Object.entries(skills)) {
+            this.memberSkills.push({
+              rating: value,
+              name: SkillName.get(key) ?? '',
+              description: SkillDescription.get(key) ?? '',
+            });
+          }
+        }
       });
     this.store.dispatch(new Member.getMemberByEmail(this.email));
   }
 
-  onRemoveMember(email: string | undefined): void {
-    this.removeMember.emit(email);
+  onRemoveMember(event: Event): void {
+    event.stopPropagation();
+    this.removeMember.emit(this.email);
   }
 
   ngOnDestroy(): void {

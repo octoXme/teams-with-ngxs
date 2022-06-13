@@ -1,0 +1,29 @@
+@import "variables";
+
+$ICON_SIZE: 24px;
+$COLOR_FILLED: #fed94b;
+$COLOR_UNFILLED: rgba($COLOR_FILLED, 0.5);
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.skill-rating {
+  &-star {
+    width: $ICON_SIZE;
+    height: $ICON_SIZE;
+    fill: $COLOR_UNFILLED;
+    &-active {
+      fill: $COLOR_FILLED;
+    }
+  }
+}
+
+.color-stop-1 {
+  stop-color: $COLOR_FILLED;
+}
+
+.color-stop-2 {
+  stop-color: $COLOR_UNFILLED;
+}
