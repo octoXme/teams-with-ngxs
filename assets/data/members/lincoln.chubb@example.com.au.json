@@ -2,7 +2,7 @@
   "id": "dde93dec-1b6c-4c69-a2bb-41fd9e2a8562",
   "name": "Lincoln Chubb",
   "email": "lincoln.chubb@example.com.au",
-  "avatar": "",
+  "avatar": "https://joeschmoe.io/api/v1/lincoln_chubb",
   "position": "Senior Developer",
   "skills": {
     "backend": 5,
