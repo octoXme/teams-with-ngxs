@@ -78,6 +78,15 @@
           },
           "defaultConfiguration": "development"
         },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "noSilent": true,
+            "baseHref": "https://octoxme.github.io/teams-with-ngxs",
+            "name": "",
+            "email": "gin85cc@gmail.com"
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
