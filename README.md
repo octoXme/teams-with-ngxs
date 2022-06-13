@@ -1,6 +1,8 @@
 # TeamsWithNgxs
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
+This is an experiment project that uses ngxs as state management to have a ability to add/remove team members from sprint teams
+(future - add functionality to add new members)
 
 ## Development server
 

@@ -1,8 +1,8 @@
 @import "variables";
 
 $ICON_SIZE: 24px;
-$COLOR_FILLED: #fed94b;
-$COLOR_UNFILLED: rgba($COLOR_FILLED, 0.5);
+$COLOR_FILLED: $brand-info;
+$COLOR_UNFILLED: $brand-default;
 
 :host {
   display: flex;

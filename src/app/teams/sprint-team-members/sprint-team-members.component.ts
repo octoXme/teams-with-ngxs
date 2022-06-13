@@ -79,8 +79,6 @@ export class SprintTeamMembersComponent implements OnInit, OnDestroy {
         if (matched && !existed) {
           userArray.push(matched);
         }
-
-        console.log('updateOptions', userArray);
       });
       this.availableOptions = userArray;
     });

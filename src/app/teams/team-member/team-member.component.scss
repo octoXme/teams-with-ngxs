@@ -22,6 +22,7 @@ $ICON_SIZE: 20px;
   &-rating {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: $gutter-size;
     &-item {
       display: flex;

@@ -25,6 +25,22 @@
       </div>
     </mat-panel-description>
   </mat-expansion-panel-header>
+
+  <div
+    class="team-member-rating-item"
+    *ngFor="let skill of memberSkills"
+    [matTooltip]="skill.description"
+  >
+    <span class="section-header">
+      {{ skill.name }}
+    </span>
+    {{ skill.rating }}
+    <app-skill-rating [rating]="skill.rating"></app-skill-rating>
+  </div>
+
+  <!-- <ng-container *ngTemplateOutlet="matExpansionPanelContent"></ng-container> -->
+</mat-expansion-panel>
+<!-- <ng-template #matExpansionPanelContent>
   <div class="team-member-rating">
     <div
       class="team-member-rating-item"
@@ -38,4 +54,4 @@
       <app-skill-rating [rating]="skill.rating"></app-skill-rating>
     </div>
   </div>
-</mat-expansion-panel>
+</ng-template> -->
