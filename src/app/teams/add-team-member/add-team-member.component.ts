@@ -13,6 +13,7 @@ export class AddTeamMemberComponent implements OnInit {
   @Input() placeholder: string;
   @Input() options: IMember[] = [];
   @Output() addMember = new EventEmitter<string>();
+  @Output() updateOptions = new EventEmitter();
 
   inputControl = new FormControl();
   filteredOptions: Observable<IMember[] | null>;
@@ -42,5 +43,9 @@ export class AddTeamMemberComponent implements OnInit {
 
   onAddMember(): void {
     this.addMember.emit(this.selectedMember);
+  }
+
+  onUpdateOptions(): void {
+    this.updateOptions.emit();
   }
 }

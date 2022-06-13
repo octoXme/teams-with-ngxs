@@ -1,40 +1,41 @@
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <app-user-item
-          [name]="member?.name"
-          [loading]="loading"
-          [photo]="member?.avatar"
-        >
-        </app-user-item>
-      </mat-panel-title>
-      <mat-panel-description class="team-member-action">
-        <div *ngIf="!loading && !disabled" actions>
-          <button
-            mat-icon-button
-            class="team-member-action-button"
-            (click)="onRemoveMember($event)"
-          >
-            <mat-icon
-              [svgIcon]="'feather:x'"
-              class="team-member-action-icon"
-            ></mat-icon>
-          </button>
-        </div>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="team-member-rating">
-      <div
-        class="team-member-rating-item"
-        *ngFor="let skill of memberSkills"
-        [matTooltip]="skill.description"
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header class="team-member-header">
+    <mat-panel-title>
+      <app-user-item
+        [name]="member?.name"
+        [loading]="loading"
+        [photo]="member?.avatar"
       >
-        <span class="section-header">
-          {{ skill.name }}
-        </span>
-        <app-skill-rating [rating]="skill.rating"></app-skill-rating>
+      </app-user-item>
+    </mat-panel-title>
+    <mat-panel-description class="team-member-action">
+      {{ member?.position }}
+      <div *ngIf="!loading && !disabled" actions>
+        <button
+          matTooltip="Remove member from team"
+          mat-icon-button
+          class="team-member-action-button"
+          (click)="onRemoveMember($event)"
+        >
+          <mat-icon
+            [svgIcon]="'feather:x'"
+            class="team-member-action-icon"
+          ></mat-icon>
+        </button>
       </div>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="team-member-rating">
+    <div
+      class="team-member-rating-item"
+      *ngFor="let skill of memberSkills"
+      [matTooltip]="skill.description"
+    >
+      <span class="section-header">
+        {{ skill.name }}
+      </span>
+      {{ skill.rating }}
+      <app-skill-rating [rating]="skill.rating"></app-skill-rating>
     </div>
-  </mat-expansion-panel>
-</mat-accordion>
+  </div>
+</mat-expansion-panel>

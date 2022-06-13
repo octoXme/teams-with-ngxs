@@ -1,6 +1,5 @@
 <div class="sprint-teams">
   <div *ngFor="let team of teams$ | async" class="sprint-teams-item">
-    <div class="title">{{ team.name }}</div>
     <app-sprint-team-members [team]="team" [sprint]="sprint$ | async">
     </app-sprint-team-members>
   </div>

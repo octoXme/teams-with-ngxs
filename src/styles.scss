@@ -74,3 +74,10 @@ body {
   font-size: 1rem;
   cursor: default;
 }
+
+// overwrite
+.feature-teams-with-ngxs {
+  mat-dialog-container {
+    padding: 0;
+  }
+}

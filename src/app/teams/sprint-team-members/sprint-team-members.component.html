@@ -1,21 +1,26 @@
-<mat-card>
-  {{ sprint }}
+<mat-card class="sprint-team-members-card">
+  <mat-card-subtitle>{{ team.name }}</mat-card-subtitle>
   <mat-card-content class="sprint-team-members-content">
-    <div *ngFor="let member of team.members">
-      <!-- pass remove -->
-      <app-team-member
-        [email]="member"
-        (removeMember)="removeMemberFromSprintTeam($event)"
-      ></app-team-member>
-    </div>
-  </mat-card-content>
-  <mat-card-actions>
+    <ng-container *ngIf="team.members.length === 0">
+      <div class="sprint-team-members-empty">
+        <mat-icon [svgIcon]="'feather:frown'"></mat-icon>
+        NO ONE HERE!
+      </div>
+    </ng-container>
     <app-add-team-member
+      *ngIf="!isUnallocatedTeam"
       placeholder="Add member to the team"
       [options]="availableOptions"
       (addMember)="addMemberToSprintTeam($event)"
-    >
-    </app-add-team-member>
-  </mat-card-actions>
+      (updateOptions)="updateOptions()"
+    ></app-add-team-member>
+  </mat-card-content>
 </mat-card>
-<!-- // TODO JIN UPDATE THE LAYOUT -->
+<mat-accordion>
+  <app-team-member
+    *ngFor="let member of team.members"
+    [email]="member"
+    [disabled]="isUnallocatedTeam"
+    (removeMember)="removeMemberFromSprintTeam($event)"
+  ></app-team-member>
+</mat-accordion>

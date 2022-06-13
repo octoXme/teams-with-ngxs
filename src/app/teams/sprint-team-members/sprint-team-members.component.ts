@@ -27,6 +27,7 @@ export class SprintTeamMembersComponent implements OnInit, OnDestroy {
 
   availableOptions: IMember[] = [];
   subscription: Subscription;
+  isUnallocatedTeam: boolean;
 
   constructor(
     private confirmationService: ConfirmationService,
@@ -34,6 +35,33 @@ export class SprintTeamMembersComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.isUnallocatedTeam = this.team.name === 'Unallocated';
+  }
+
+  ngOnDestroy(): void {}
+
+  addMemberToSprintTeam(email: string): void {
+    this.store.dispatch(new Team.AddMemberToTeam(email, this.team.name));
+    this.updateOptions();
+  }
+
+  removeMemberFromSprintTeam(email: string): void {
+    const confirmation = this.confirmationService.open({
+      type: ConfirmationDialogType?.WARN,
+      title: `Deallocate from ${this.team.name} - ${this.sprint}`,
+      message: `Are you sure you want to deallocate ${email}?`,
+    });
+
+    confirmation.afterClosed().subscribe((result) => {
+      if (result === 'confirmed') {
+        this.store.dispatch(
+          new Team.RemoveMemberFromTeam(email, this.team.name)
+        );
+      }
+    });
+  }
+
+  updateOptions(): void {
     this.subscription = combineLatest([
       this.unallocatedMemberEmails$,
       this.allMembers$,
@@ -51,30 +79,10 @@ export class SprintTeamMembersComponent implements OnInit, OnDestroy {
         if (matched && !existed) {
           userArray.push(matched);
         }
+
+        console.log('updateOptions', userArray);
       });
       this.availableOptions = userArray;
-    });
-  }
-
-  ngOnDestroy(): void {}
-
-  addMemberToSprintTeam(email: string): void {
-    this.store.dispatch(new Team.AddMemberToTeam(email, this.team.name));
-  }
-
-  removeMemberFromSprintTeam(email: string): void {
-    const confirmation = this.confirmationService.open({
-      type: ConfirmationDialogType?.WARN,
-      title: `Deallocate from ${this.team.name} - ${this.sprint}`,
-      message: `Are you sure you want to deallocate ${email}?`,
-    });
-
-    confirmation.afterClosed().subscribe((result) => {
-      if (result === 'confirmed') {
-        this.store.dispatch(
-          new Team.RemoveMemberFromTeam(email, this.team.name)
-        );
-      }
     });
   }
 }

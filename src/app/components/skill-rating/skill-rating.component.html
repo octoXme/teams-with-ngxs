@@ -17,18 +17,18 @@
   </defs>
 </svg>
 
-<div class="skill-rating" data-jest="stars">
-  <span *ngFor="let fullStar of fullStars" data-jest="full star">
+<div class="skill-rating">
+  <span *ngFor="let fullStar of fullStars">
     <svg class="skill-rating-star skill-rating-star-active">
       <use xlink:href="#star"></use>
     </svg>
   </span>
-  <span *ngIf="isHalfStart" data-jest="half star">
+  <span *ngIf="isHalfStart">
     <svg class="skill-rating-star skill-rating-star-active">
       <use xlink:href="#star" fill="url(#half)"></use>
     </svg>
   </span>
-  <span *ngFor="let emptyStar of emptyStars" data-jest="empty star">
+  <span *ngFor="let emptyStar of emptyStars">
     <svg class="skill-rating-star">
       <use xlink:href="#star"></use>
     </svg>

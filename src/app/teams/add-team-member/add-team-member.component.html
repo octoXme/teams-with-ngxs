@@ -7,6 +7,7 @@
       matInput
       [formControl]="inputControl"
       [matAutocomplete]="auto"
+      (focus)="onUpdateOptions()"
     />
     <mat-autocomplete
       #auto="matAutocomplete"

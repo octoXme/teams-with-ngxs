@@ -3,10 +3,15 @@
 $ICON_SIZE: 20px;
 
 .team-member {
+  &-header {
+    padding: 0 $gutter-size;
+  }
   &-action {
+    margin: 0;
     justify-content: flex-end;
     &-button {
       color: $brand-icon;
+      font-size: $ICON_SIZE;
     }
     &-icon {
       height: $ICON_SIZE;
@@ -25,34 +30,3 @@ $ICON_SIZE: 20px;
     }
   }
 }
-// $ICON_SIZE: 20px;
-
-// .member-item {
-//   display: flex;
-//   align-items: center;
-
-//   gap: $gutter-size;
-//   &-content {
-//     display: flex;
-//     align-items: center;
-//     flex: 1 1 auto;
-
-//     gap: calc($gutter-size / 2);
-//   }
-
-//   &-text {
-//     display: flex;
-//     align-items: center;
-//     min-height: $gutter-size * 1.5;
-//     width: 100%;
-//   }
-
-//   &-action {
-//     color: $brand-icon;
-//     &-icon {
-//       height: $ICON_SIZE;
-//       width: $ICON_SIZE;
-//       font-size: $ICON_SIZE;
-//     }
-//   }
-// }

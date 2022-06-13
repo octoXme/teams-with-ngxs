@@ -1,10 +1,24 @@
 @import "variables";
 
 .sprint-team-members {
+  &-card {
+    margin-bottom: $gutter-size;
+  }
+
   &-content {
+    margin-top: $gutter-size;
+  }
+
+  &-empty {
     display: flex;
-    flex-direction: column;
-    grid-gap: 1rem;
-    gap: 1rem;
+    align-items: center;
+    gap: calc($gutter-size / 2);
+    color: $brand-icon;
+  }
+}
+
+:host::ng-deep {
+  mat-card-subtitle {
+    margin: 0;
   }
 }
