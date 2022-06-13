@@ -1,0 +1,36 @@
+[
+  {
+    "id": "d78fec6a-e4b8-473f-bf40-8ef780ba56ba",
+    "name": "Cool Kids Club",
+    "members": [
+      "adam.long@example.com.au",
+      "archer.macgroarty@example.com.au",
+      "eliza.arden@example.com.au",
+      "zachary.Bbeeby@example.com.au"
+    ]
+  },
+  {
+    "id": "34eb575b-973a-4682-9ab9-e2ebf1267435",
+    "name": "Pro Performers",
+    "members": [
+      "lincoln.chubb@example.com.au",
+      "tristan.coaldrake@example.com.au",
+      "sam.lee@example.com.au"
+    ]
+  },
+  {
+    "id": "dc33d538-0d7c-4810-a10c-8338b604a35d",
+    "name": "Thunderous Cats",
+    "members": [
+      "amelie.mccrae@example.com.au",
+      "jamie.mouy@example.com.au",
+      "junah.arian@example.com.au",
+      "natasha.collicott@example.com.au"
+    ]
+  },
+  {
+    "id": "f552f61a-407b-4851-a2a1-d15665771843",
+    "name": "Unallocated",
+    "members": []
+  }
+]

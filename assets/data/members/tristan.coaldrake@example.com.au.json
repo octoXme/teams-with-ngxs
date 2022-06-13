@@ -1,0 +1,18 @@
+{
+  "id": "aa45dc13-466d-4202-902c-f6ae84241fca",
+  "name": "Tristan Coaldrake",
+  "email": "tristan.coaldrake@example.com.au",
+  "avatar": "",
+  "position": "Developer",
+  "skills": {
+    "backend": 3,
+    "frontend": 3.5,
+    "architecture": 3,
+    "infrastructure": 3,
+    "design": 3,
+    "research": 4,
+    "qualityAssurance": 3,
+    "leaderShip": 2,
+    "mentorship": 4
+  }
+}

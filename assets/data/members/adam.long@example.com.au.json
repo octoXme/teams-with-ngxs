@@ -1,0 +1,18 @@
+{
+  "id": "cf6c4014-9c46-4b5d-8d0f-5ff51e46b151",
+  "name": "Adam Long",
+  "email": "adam.long@example.com.au",
+  "avatar": "https://images.generated.photos/PpKZYA1K3UpbSVhxiEkeIhaepC-i8YFN6WBDW5DSp78/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/MjEwODYxLmpwZw.jpg",
+  "position": "Senior Developer",
+  "skills": {
+    "backend": 5,
+    "frontend": 4.5,
+    "architecture": 5,
+    "infrastructure": 4,
+    "design": 2,
+    "research": 4,
+    "qualityAssurance": 5,
+    "leaderShip": 5,
+    "mentorship": 5
+  }
+}

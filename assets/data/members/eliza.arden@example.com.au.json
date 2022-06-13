@@ -1,0 +1,18 @@
+{
+  "id": "cf6c4014-9c46-4b5d-8d0f-5ff51e46b151",
+  "name": "Eliza Marden",
+  "email": "eliza.arden@example.com.au",
+  "avatar": "https://images.generated.photos/Qxowf6zYasYSVkE1YwU9vDCcc37sMes7rHYPMc8Zx4k/rs:fit:512:512/wm:0.95:sowe:18:18:0.33/czM6Ly9pY29uczgu/Z3Bob3Rvcy1wcm9k/LnBob3Rvcy92M18w/ODcyOTc2LmpwZw.jpg",
+  "position": "Senior Product Designer",
+  "skills": {
+    "backend": 0,
+    "frontend": 2,
+    "architecture": 0,
+    "infrastructure": 0,
+    "design": 5,
+    "research": 5,
+    "qualityAssurance": 3,
+    "leaderShip": 5,
+    "mentorship": 5
+  }
+}

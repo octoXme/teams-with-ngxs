@@ -1,0 +1,18 @@
+{
+  "id": "c5d52d85-a210-4004-ac8c-c243b3fed832",
+  "name": "Junah Arian",
+  "email": "junah.arian@example.com.au",
+  "avatar": "",
+  "position": "Senior Developer",
+  "skills": {
+    "backend": 4.5,
+    "frontend": 5,
+    "architecture": 4,
+    "infrastructure": 4,
+    "design": 4,
+    "research": 4,
+    "qualityAssurance": 5,
+    "leaderShip": 4,
+    "mentorship": 5
+  }
+}

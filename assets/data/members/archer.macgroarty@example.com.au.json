@@ -1,0 +1,18 @@
+{
+  "id": "cffb41d0-f714-400d-997e-be2a1111995b",
+  "name": "Archer Macgroarty",
+  "email": "archer.macgroarty@example.com.au",
+  "avatar": "",
+  "position": "Developer",
+  "skills": {
+    "backend": 4,
+    "frontend": 3,
+    "architecture": 2,
+    "infrastructure": 3,
+    "design": 3,
+    "research": 3,
+    "qualityAssurance": 4,
+    "leaderShip": 3,
+    "mentorship": 4
+  }
+}

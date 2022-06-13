@@ -1,0 +1,18 @@
+{
+  "id": "34d09a78-7dac-4075-9810-d154e04fa332",
+  "name": "Jamie Mouy",
+  "email": "jamie.mouy@example.com.au",
+  "avatar": "",
+  "position": "Developer",
+  "skills": {
+    "backend": 4,
+    "frontend": 4,
+    "architecture": 3.5,
+    "infrastructure": 3,
+    "design": 3,
+    "research": 3,
+    "qualityAssurance": 3,
+    "leaderShip": 3,
+    "mentorship": 3.5
+  }
+}

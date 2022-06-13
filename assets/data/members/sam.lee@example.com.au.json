@@ -1,0 +1,18 @@
+{
+  "id": "77239dcc-8d87-455d-ac18-a07a9aa5877b",
+  "name": "Sam Lee",
+  "email": "sam.lee@example.com.au",
+  "avatar": "",
+  "position": "Developer",
+  "skills": {
+    "backend": 4,
+    "frontend": 3,
+    "architecture": 4,
+    "infrastructure": 3,
+    "design": 3,
+    "research": 3,
+    "qualityAssurance": 4,
+    "leaderShip": 3,
+    "mentorship": 3
+  }
+}
